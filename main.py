@@ -10,6 +10,8 @@ def getDetails():
     print("Only letters, numbers, and !@#$%^&*()_-~ are allowed")
     print("Start a 2 digit number or special character")
     print("Should not contain 5 same characters or numbers consecutively")
+    print("Should not contain user name")
+    print("Should not 3 same special characters consecutively")
 
     password=input()
        
@@ -79,6 +81,19 @@ def checkPasswordContainUsername(username,password):
         return False
     return True
 
+def checkConsecutiveSpecial(password):
+    count=1
+    for i in range(len(password)-1):
+     if password[i] in "!@#$%^&*()_-~" and password[i+1] in "!@#$%^&*()_-~":
+        if password[i]==password[i+1]:
+            count=count+1
+     elif password[i]!=password[i+1]:
+        count=1
+
+    if count>=3:
+        return False
+    return True
+
 def main():
     username,password=getDetails()
     if checkPasswordLength(password)==False:
@@ -107,7 +122,9 @@ def main():
 
     if checkPasswordContainUsername(username, password)==False:
         print("Password should not contain username")
-
+    
+    if checkConsecutiveSpecial(password)==False:
+        print("Password should contain atleast three special character consecutively")
     
 if __name__ == "__main__":
     main()
