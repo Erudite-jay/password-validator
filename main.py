@@ -5,19 +5,19 @@ def getUsername():
 
 def getPassword():
 
-    password=input("Enter password")
-    password=input(
+    print("Enter password")
+    print(
         "Note: Password should contains \n length greater than 12 and less than 20 characters"
     )
-    password=input("Three Uppercase letter")
-    password=input("Three lowercase letter")
-    password=input("One number")
-    password=input("Three special character")
-    password=input("Only letters, numbers, and !@#$%^&*()_-~ are allowed")
-    password=input("Start a 2 digit number or special character")
-    password=input("Should not contain 5 same characters or numbers consecutively")
-    password=input("Should not contain user name")
-    password=input("Should not 3 same special characters consecutively")
+    print("Three Uppercase letter")
+    print("Three lowercase letter")
+    print("One number")
+    print("Three special character")
+    print("Only letters, numbers, and !@#$%^&*()_-~ are allowed")
+    print("Start a 2 digit number or special character")
+    print("Should not contain 5 same characters or numbers consecutively")
+    print("Should not contain user name")
+    print("Should not 3 same special characters consecutively")
 
     password = input()
 
@@ -125,50 +125,59 @@ def validator(username, password):
     if checkPasswordLength(password) == False:
         password = input("Password length Should be less than 12 and more than 20 characters : ")
         validator(username, password)
-
+        return
+    
     elif checkAtleastThreeUpperCase(password) == False:
-        password=input("Password should contain atleast Three upper case letter")
+        password=input("Password should contain atleast Three upper case letter : ")
         validator(username, password)
+        return
 
     elif checkAtleastThreeLowerCase(password) == False:
-        password=input("Password should contain atleast Three lower case letter")
+        password=input("Password should contain atleast Three lower case letter : ")
         validator(username, password)
+        return
 
     elif checkAtleastOneNumber(password) == False:
-        password=input("Password should contain atleast one number")
+        password=input("Password should contain atleast one number : ")
         validator(username, password)
+        return
 
     elif checkThreeSpecialCharacter(password) == False:
-        password=input("Password should contain atleast three special character")
+        password=input("Password should contain atleast three special character : ")
         validator(username, password)
+        return
 
     elif allowedCharacters(password) == False:
-        password=input("Only letters, numbers, and !@#$%^&*()_-~ are allowed")
+        password=input("Only letters, numbers, and !@#$%^&*()_-~ are allowed : ")
         validator(username, password)
+        return
 
     elif checkPasswordStart(password) == False:
-        password=input("Password should start with a 2 digit number or special character")
+        password=input("Password should start with a 2 digit number or special character : ")
         validator(username, password)
+        return
 
     elif checkConsecutiveCharNum(password) == False:
         password=input(
-            "Password string cannot contain 5 same characters or numbers consecutively"
+            "Password string cannot contain 5 same characters or numbers consecutively : "
         )
         validator(username, password)
 
     elif checkPasswordContainUsername(username, password) == False:
-        password=input("Password should not contain username")
+        password=input("Password should not contain username : " )
         validator(username, password)
+        return
 
     elif checkConsecutiveSpecial(password) == False:
         password=input(
-            "Password should not contain atleast three special character consecutively"
+            "Password should not contain three special character consecutively : "
         )
         validator(username, password)
+        return
 
     else:
         print("Password is valid")
-
+        return
 
 
 def main():
