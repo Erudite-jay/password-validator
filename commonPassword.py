@@ -1,5 +1,5 @@
 passwordList = [
-    "123@JayPra@%Ps3"
+    "123@JayPra@%Ps3",
     "ilovecoding1234",
     "letmein456789123",
     "passwordisweak",
@@ -9,7 +9,7 @@ passwordList = [
     "trustnoonebutyou",
     "correctbatteryhorse",
     "nevergonnagiveup",
-    "baseballandfootball",
+    "bAAAseballandfootball",
     "1234567890abcdef",
     "password123password123",
     "iloveyoualwaysforever",
@@ -32,7 +32,7 @@ passwordList = [
     "P@ssw0rd!1234567890",
     "password1234567890qwerty",
     "ilovemylifeandmyfamily",
-    "letmeinnowplease123",
+    "LETmeinnowplease123",
     "mycatiscuteandfluffy",
     "passwordisgood123",
     "qwertyuiopasdfghjkl",
