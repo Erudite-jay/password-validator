@@ -9,6 +9,7 @@ def getDetails():
     print("Three special character")
     print("Only letters, numbers, and !@#$%^&*()_-~ are allowed")
     print("Start a 2 digit number or special character")
+    print("Should not contain 5 same characters or numbers consecutively")
 
     password=input()
        
@@ -62,6 +63,17 @@ def checkPasswordStart(password):
     return True
  return False
 
+def checkConsecutiveCharNum(password):
+    count=1
+    for i in range(len(password)-1):
+        if password[i]==password[i+1]:
+            count=count+1
+        elif password[i]!=password[i+1]:
+            count=1
+    if count>4:
+        return False
+    return True
+
 def main():
     username,password=getDetails()
     if checkPasswordLength(password)==False:
@@ -85,5 +97,8 @@ def main():
     if checkPasswordStart(password)==False:
         print("Password should start with a 2 digit number or special character")
         
+    if checkConsecutiveCharNum(password)==False:
+        print("Password string cannot contain 5 same characters or numbers consecutively")
+    
 if __name__ == "__main__":
     main()
