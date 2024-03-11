@@ -88,10 +88,10 @@ def checkConsecutiveCharNum(password):
     for i in range(len(password) - 1):
         if password[i] == password[i + 1]:
             count = count + 1
+            if count >= 5:
+                return False
         elif password[i] != password[i + 1]:
             count = 1
-    if count > 4:
-        return False
     return True
 
 
@@ -107,11 +107,10 @@ def checkConsecutiveSpecial(password):
         if password[i] in "!@#$%^&*()_-~" and password[i + 1] in "!@#$%^&*()_-~":
             if password[i] == password[i + 1]:
                 count = count + 1
+                if count >= 3:
+                    return False
         elif password[i] != password[i + 1]:
             count = 1
-
-    if count >= 3:
-        return False
     return True
 
 
