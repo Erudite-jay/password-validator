@@ -2,11 +2,13 @@ def getDetails():
     username=input("Enter user name ")
 
     print("Enter password")
-    print("Note:\nPassword length should be greater than 12 and less than 20 characters")
+    print("Note: Password should contains \n length greater than 12 and less than 20 characters")
     print("Three Uppercase letter")
     print("Three lowercase letter")
     print("One number")
     print("Three special character")
+    print("Only letters, numbers, and !@#$%^&*()_-~ are allowed")
+    print("Start a 2 digit number or special character")
 
     password=input()
        
@@ -55,6 +57,11 @@ def allowedCharacters(password):
             return False
         return True
 
+def checkPasswordStart(password):
+ if (password[0].isdigit() and password[1].isdigit()) or password[0] in "!@#$%^&*()_-~":
+    return True
+ return False
+
 def main():
     username,password=getDetails()
     if checkPasswordLength(password)==False:
@@ -74,7 +81,9 @@ def main():
 
     if allowedCharacters(password)==False:
         print("Only letters, numbers, and !@#$%^&*()_-~ are allowed")
+
+    if checkPasswordStart(password)==False:
+        print("Password should start with a 2 digit number or special character")
         
 if __name__ == "__main__":
     main()
-
