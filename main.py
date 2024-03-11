@@ -24,7 +24,7 @@ def getPassword():
 
 
 def checkPasswordLength(password):
-    if len(password) < 12 and len(password) <= 20:
+    if len(password) < 12 or len(password) > 20:
         return False
     return True
 
@@ -121,7 +121,7 @@ def checkCommonPassword(password):
 def validator(username, password):
 
     if checkPasswordLength(password) == False:
-        password = input("Password length Should be less than 12 and more than 20 characters : ")
+        password = input("Password length Should be more than 12 and less than 20 characters : ")
         validator(username, password)
         return
     
