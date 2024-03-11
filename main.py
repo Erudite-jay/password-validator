@@ -160,6 +160,7 @@ def validator(username, password):
             "Password string cannot contain 5 same characters or numbers consecutively : "
         )
         validator(username, password)
+        return
 
     elif checkPasswordContainUsername(username, password) == False:
         password=input("Password should not contain username : " )
