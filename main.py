@@ -1,3 +1,4 @@
+from commonPassword import passwordList as pl
 def getUsername():
     username = input("Enter user name ")
     return username
@@ -20,7 +21,6 @@ def getPassword():
     password = input("Enter password: ")
 
     return password
-
 
 
 def checkPasswordLength(password):
@@ -115,64 +115,69 @@ def checkConsecutiveSpecial(password):
 
 
 def checkCommonPassword(password):
-    pass
+    for i in pl:
+        if password == i:
+            return False
+    return True
+
 
 def validator(username, password):
 
     if checkPasswordLength(password) == False:
-        password = input("Password length Should be more than 12 and less than 20 characters : ")
-        return validator(username, password)
-        
-    
-    elif checkAtleastThreeUpperCase(password) == False:
-        password=input("Password should contain atleast Three upper case letter : ")
+        password = input(
+            "Password length Should be more than 12 and less than 20 characters : ")
         return validator(username, password)
 
+    elif checkAtleastThreeUpperCase(password) == False:
+        password = input(
+            "Password should contain atleast Three upper case letter : ")
+        return validator(username, password)
 
     elif checkAtleastThreeLowerCase(password) == False:
-        password=input("Password should contain atleast Three lower case letter : ")
+        password = input(
+            "Password should contain atleast Three lower case letter : ")
         return validator(username, password)
-        
 
     elif checkAtleastOneNumber(password) == False:
-        password=input("Password should contain atleast one number : ")
+        password = input("Password should contain atleast one number : ")
         return validator(username, password)
-       
 
     elif checkThreeSpecialCharacter(password) == False:
-        password=input("Password should contain atleast three special character : ")
+        password = input(
+            "Password should contain atleast three special character : ")
         return validator(username, password)
-
 
     elif allowedCharacters(password) == False:
-        password=input("Only letters, numbers, and !@#$%^&*()_-~ are allowed : ")
+        password = input(
+            "Only letters, numbers, and !@#$%^&*()_-~ are allowed : ")
         return validator(username, password)
-       
 
     elif checkPasswordStart(password) == False:
-        password=input("Password should start with a 2 digit number or special character : ")
+        password = input(
+            "Password should start with a 2 digit number or special character : ")
         return validator(username, password)
-        
 
     elif checkConsecutiveCharNum(password) == False:
-        password=input(
+        password = input(
             "Password string cannot contain 5 same characters or numbers consecutively : "
         )
         return validator(username, password)
-        
 
     elif checkPasswordContainUsername(username, password) == False:
-        password=input("Password should not contain username : " )
+        password = input("Password should not contain username : ")
         return validator(username, password)
-       
 
     elif checkConsecutiveSpecial(password) == False:
-        password=input(
+        password = input(
             "Password should not contain three special character consecutively : "
         )
         return validator(username, password)
-       
-
+    
+    elif checkCommonPassword(password) == False:
+        password = input(
+            "Password should not contain common password : ")
+        return validator(username, password)
+    
     else:
         print("Password is valid")
         return
