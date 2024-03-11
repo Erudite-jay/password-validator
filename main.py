@@ -74,6 +74,11 @@ def checkConsecutiveCharNum(password):
         return False
     return True
 
+def checkPasswordContainUsername(username,password):
+    if username in password:
+        return False
+    return True
+
 def main():
     username,password=getDetails()
     if checkPasswordLength(password)==False:
@@ -99,6 +104,10 @@ def main():
         
     if checkConsecutiveCharNum(password)==False:
         print("Password string cannot contain 5 same characters or numbers consecutively")
+
+    if checkPasswordContainUsername(username, password)==False:
+        print("Password should not contain username")
+
     
 if __name__ == "__main__":
     main()
