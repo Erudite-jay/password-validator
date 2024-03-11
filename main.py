@@ -5,10 +5,8 @@ def getUsername():
 
 def getPassword():
 
-    print("Enter password")
-    print(
-        "Note: Password should contains \n length greater than 12 and less than 20 characters"
-    )
+    print("Note: Password should contains :")
+    print("Length greater than 12 and less than 20 characters")
     print("Three Uppercase letter")
     print("Three lowercase letter")
     print("One number")
@@ -19,7 +17,7 @@ def getPassword():
     print("Should not contain user name")
     print("Should not 3 same special characters consecutively")
 
-    password = input()
+    password = input("Enter password: ")
 
     return password
 
