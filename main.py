@@ -124,7 +124,7 @@ def main():
         print("Password should not contain username")
     
     if checkConsecutiveSpecial(password)==False:
-        print("Password should contain atleast three special character consecutively")
+        print("Password should not contain atleast three special character consecutively")
     
 if __name__ == "__main__":
     main()
