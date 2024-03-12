@@ -179,8 +179,7 @@ def validator(username, password):
         return validator(username, password)
     
     else:
-        print("Password is valid")
-        return
+        return print("Password is valid")
 
 
 def main():
