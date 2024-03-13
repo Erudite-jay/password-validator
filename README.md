@@ -15,6 +15,9 @@ This Python script is designed to validate user passwords based on specific crit
 - **Consecutive Special Character Check:** Ensures that there are no three consecutive special characters.
 - **Common Password Check:** Verifies that the password is not one of the commonly used passwords.
 
+  ### __Phase 2__
+- **User Ask:** Prompt to ask user to retry to make new password
+
 ## Functions
 
 1. **getUsername():**
@@ -78,6 +81,12 @@ This Python script is designed to validate user passwords based on specific crit
     - Entry point of the script.
     - Calls getUsername(), getPassword(), and validator() functions.
 
+ ### Phase 2 Functions
+16. **askUser():**
+    - Prompt user that he wants continue creating or not.
+    - Calls validator() functions in respond of Yes and Calls main() in case of Retry.
+   
+
 ## How to Use
 
 1. Run the script.
@@ -85,6 +94,7 @@ This Python script is designed to validate user passwords based on specific crit
 3. Follow the instructions to input a password.
 4. The script will validate the password based on the defined criteria.
 5. If the password is valid, a confirmation message will be displayed. Otherwise, the user will be prompted to enter a new password that meets the requirements.
+6. Ask User whether he wants to continue making password in 3 times wrong password input and ask to retry in 6 times wrong passsword input
 
 ## Requirements
 
