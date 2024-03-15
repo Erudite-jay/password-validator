@@ -18,7 +18,7 @@ This Python script is designed to validate user passwords based on specific crit
   ### __Phase 2__
 - **User Ask:** Prompt to ask user to retry to make new password
 
- ### __Phase 3__
+  ### __Phase 3__
 - **Username Validator:** Validate User Name , cannot contains spaces and cannot be blank
 - Print last Wrong Password 
 
@@ -90,7 +90,7 @@ This Python script is designed to validate user passwords based on specific crit
     - Prompt user that he wants continue creating or not.
     - Calls validator() functions in respond of Yes and Calls main() in case of Retry.
 
-    ### Phase 2 Functions
+ ### Phase 2 Functions
 16. **usernameValidator():**
     - validate Username .
     - Calls getUsername() functions in fail validation of username.
