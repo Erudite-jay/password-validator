@@ -122,7 +122,16 @@ def checkCommonPassword(password):
     return True
 
 
-def validator(username, password, count):
+# find usename contain blank spaces or not
+def usernameValidator(username):
+    if " " in username:
+        print("Username cannot contain blank Spaces")
+        return getUsername()
+    return True
+   
+
+
+def passwordValidator(username, password, count):
 
     if count == 3:
         return askUser(username, count)
@@ -130,72 +139,84 @@ def validator(username, password, count):
         return askUser(username, count)
 
     if checkPasswordLength(password) == False:
+        print("Your last Password is " , password)
         password = input(
             "Password length Should be more than 12 and less than 20 characters : ")
-        return validator(username, password, count+1)
+        return passwordValidator(username, password, count+1)
 
     elif checkAtleastThreeUpperCase(password) == False:
+        print("Your last Password is " , password)
         password = input(
             "Password should contain atleast Three upper case letter : ")
-        return validator(username, password, count+1)
+        return passwordValidator(username, password, count+1)
 
     elif checkAtleastThreeLowerCase(password) == False:
+        print("Your last Password is " , password)
         password = input(
             "Password should contain atleast Three lower case letter : ")
-        return validator(username, password, count+1)
+        return passwordValidator(username, password, count+1)
 
     elif checkAtleastOneNumber(password) == False:
+        print("Your last Password is " , password)
         password = input("Password should contain atleast one number : ")
-        return validator(username, password, count+1)
+        return passwordValidator(username, password, count+1)
 
     elif checkThreeSpecialCharacter(password) == False:
+        print("Your last Password is " , password) 
         password = input(
             "Password should contain atleast three special character : ")
-        return validator(username, password, count+1)
+        return passwordValidator(username, password, count+1)
 
     elif allowedCharacters(password) == False:
+        print("Your last Password is ", password)
         password = input(
             "Only letters, numbers, and !@#$%^&*()_-~ are allowed : ")
-        return validator(username, password, count+1)
+        return passwordValidator(username, password, count+1)
 
     elif checkPasswordStart(password) == False:
+        print("Your last Password is ", password)
         password = input(
             "Password should start with a 2 digit number or special character : ")
-        return validator(username, password, count+1)
+        return passwordValidator(username, password, count+1)
 
     elif checkConsecutiveCharNum(password) == False:
+        print("Your last Password is ", password)
         password = input(
             "Password string cannot contain 5 same characters or numbers consecutively : "
         )
-        return validator(username, password, count+1)
+        return passwordValidator(username, password, count+1)
 
     elif checkPasswordContainUsername(username, password) == False:
+        print("Your last Password is ", password)
         password = input("Password should not contain username : ")
-        return validator(username, password, count+1)
+        return passwordValidator(username, password, count+1)
 
     elif checkConsecutiveSpecial(password) == False:
+        print("Your last Password is ", password)
         password = input(
             "Password should not contain three special character consecutively : "
         )
-        return validator(username, password, count+1)
+        return passwordValidator(username, password, count+1)
 
     elif checkCommonPassword(password) == False:
+        print("Your last Password is ", password)
         password = input(
             "Password should not contain common password : ")
-        return validator(username, password, count+1)
+        return passwordValidator(username, password, count+1)
 
     else:
         return print("Password is valid")
 
-#this function is to ask user that he wants continue creating or not
+
+# this function is to ask user that he wants continue creating or not
 def askUser(username, count):
     if count == 3:
         respond = input(
             "Do you want to Continue Again? Y For Yes Otherwise Enter any Other Key : ")
-        
+
         if (respond.upper() == "Y"):
             password = getPassword()
-            return validator(username, password, count+1)
+            return passwordValidator(username, password, count+1)
         else:
             return print("Thank you for using our service")
 
@@ -206,8 +227,10 @@ def askUser(username, count):
 
 def main():
     username = getUsername()
+    usernameValidator(username)
+    
     password = getPassword()
-    validator(username, password, 0)
+    passwordValidator(username, password, 0)
 
 
 if __name__ == "__main__":
