@@ -18,6 +18,10 @@ This Python script is designed to validate user passwords based on specific crit
   ### __Phase 2__
 - **User Ask:** Prompt to ask user to retry to make new password
 
+ ### __Phase 3__
+- **Username Validator:** Validate User Name , cannot contains spaces and cannot be blank
+- Print last Wrong Password 
+
 ## Functions
 
 1. **getUsername():**
@@ -73,7 +77,7 @@ This Python script is designed to validate user passwords based on specific crit
     - Checks if the password is one of the commonly used passwords.
     - Returns True if the password is not common, False otherwise.
 
-14. **validator(username, password):**
+14. **passwordValidator(username, password):**
     - Validates the password based on all the above functions.
     - Provides feedback to the user if the password is not valid.
 
@@ -85,7 +89,11 @@ This Python script is designed to validate user passwords based on specific crit
 16. **askUser():**
     - Prompt user that he wants continue creating or not.
     - Calls validator() functions in respond of Yes and Calls main() in case of Retry.
-   
+
+    ### Phase 2 Functions
+16. **usernameValidator():**
+    - validate Username .
+    - Calls getUsername() functions in fail validation of username.
 
 ## How to Use
 
@@ -93,8 +101,9 @@ This Python script is designed to validate user passwords based on specific crit
 2. Enter the desired username when prompted.
 3. Follow the instructions to input a password.
 4. The script will validate the password based on the defined criteria.
-5. If the password is valid, a confirmation message will be displayed. Otherwise, the user will be prompted to enter a new password that meets the requirements.
-6. Ask User whether he wants to continue making password in 3 times wrong password input and ask to retry in 6 times wrong passsword input
+5. It validate the username and proceed to ask password 
+6. If the password is valid, a confirmation message will be displayed. Otherwise, the user will be prompted to enter a new password that meets the requirements.
+7. Ask User whether he wants to continue making password in 3 times wrong password input and ask to retry in 6 times wrong passsword input
 
 ## Requirements
 
