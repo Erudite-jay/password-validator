@@ -90,8 +90,8 @@ This Python script is designed to validate user passwords based on specific crit
     - Prompt user that he wants continue creating or not.
     - Calls validator() functions in respond of Yes and Calls main() in case of Retry.
 
- ### Phase 2 Functions
-16. **usernameValidator():**
+ ### Phase 3 Functions
+17. **usernameValidator():**
     - validate Username .
     - Calls getUsername() functions in fail validation of username.
 
